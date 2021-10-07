@@ -412,3 +412,5 @@ MonoBehaviour:
   bullet: {fileID: 3525727311356161138, guid: e5cb45803a67f8946b54d9a3cca3bcb9, type: 3}
   bulletpoint: {fileID: 886662730}
   body: {fileID: 1778641087}
+  recoil: 0
+  recoilforce: 5865
