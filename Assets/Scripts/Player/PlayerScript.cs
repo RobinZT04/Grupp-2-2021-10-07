@@ -6,6 +6,7 @@ public class PlayerScript : MonoBehaviour
 {
     public void Update()
     {
+        Time.timeScale = 1;
         IWalk walker = GetComponent(typeof(IWalk)) as IWalk; //säger att Iwalk interfacen är "walker" - Robin
         walker.Walking(); //startar funktionen Walking i IWalk - Robin
 
