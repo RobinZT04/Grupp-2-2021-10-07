@@ -9,6 +9,8 @@ public class ShootingScript : MonoBehaviour, IShoot
 
     public GameObject player; //referens till player gameobjectet - Robin
 
+    public GameObject particles; //referens till particles gameobject - Robin
+
     public Transform bulletpoint; //refrens till bulletpoint position - Robin
 
     public Rigidbody2D body; //en referens till rigidbody2D:n - Robin
@@ -31,6 +33,7 @@ public class ShootingScript : MonoBehaviour, IShoot
                 recoil = true; //sätter recoil till true - Robin
                 player.transform.localScale = new Vector2(1.1f, 0.8f);
             gunanim.SetBool("spin", true);
+            particles.SetActive(true); //sätter på partiklarna - Robin
                 StartCoroutine(Reload()); //startar den funktionen Reload som är en coroutine - Robin
             }
 
@@ -50,11 +53,13 @@ public class ShootingScript : MonoBehaviour, IShoot
         }
         IEnumerator Reload() //funktionen till coroutinen - Robin
         {
-            yield return new WaitForSeconds(0.15f); //väntar i 1 sekunder - Robin
+            yield return new WaitForSeconds(0.15f); //väntar i 0.15 sekunder - Robin
             player.transform.localScale = new Vector2(1, 1f);
-            yield return new WaitForSeconds(0.2f); //väntar i 1 sekunder - Robin
+            yield return new WaitForSeconds(0.2f); //väntar i 0.2 sekunder - Robin
             gunanim.SetBool("spin", false);
-            yield return new WaitForSeconds(0.5f); //väntar i 1 sekunder - Robin
+            yield return new WaitForSeconds(0.2f); //väntar i 0.2 sekunder - Robin
+            particles.SetActive(false); //stänger av partiklarna - Robin
+            yield return new WaitForSeconds(0.3f); //väntar i 1 sekunder - Robin
             ammo = 1; //sätter ammo till 1 - Robin
         }
     }
