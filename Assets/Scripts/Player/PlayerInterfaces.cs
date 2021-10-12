@@ -10,3 +10,8 @@ public interface IShoot //skapar interfacen IShooting - Robin
 {
     void Shooting(); //aktiverar funktionen "Shooting" - Robin
 }
+
+public interface IDash //skapar interfacen IShooting - Robin
+{
+    void Dashing(); //aktiverar funktionen "Shooting" - Robin
+}
