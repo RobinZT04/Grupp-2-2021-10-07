@@ -12,5 +12,8 @@ public class PlayerScript : MonoBehaviour
 
         IShoot shooter = GetComponent(typeof(IShoot)) as IShoot; //säger att Iwalk interfacen är "Shooting" - Robin
         shooter.Shooting(); //startar funktionen Walking i IShoot- Robin
+
+        IDash dasher = GetComponent(typeof(IDash)) as IDash; //säger att Iwalk interfacen är "Shooting" - Robin
+        dasher.Dashing(); //startar funktionen Walking i IShoot- Robin
     }
 }

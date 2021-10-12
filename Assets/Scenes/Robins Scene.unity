@@ -5217,6 +5217,8 @@ GameObject:
   - component: {fileID: 1778641088}
   - component: {fileID: 1778641089}
   - component: {fileID: 1778641090}
+  - component: {fileID: 1778641091}
+  - component: {fileID: 1778641092}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -5384,3 +5386,40 @@ MonoBehaviour:
   recoilforce: 5865
   ammo: 1
   gunanim: {fileID: 1707594213}
+  playeranim: {fileID: 1778641092}
+--- !u!114 &1778641091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778641083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e35b5bb1657ad554e8ceb1ea0028e950, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dash: 0
+  candash: 0
+  body: {fileID: 1778641087}
+  dashspeed: 0
+  playeranim: {fileID: 1778641092}
+--- !u!95 &1778641092
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778641083}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 49ccf3433b275bf41b06abaaf5fb0158, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

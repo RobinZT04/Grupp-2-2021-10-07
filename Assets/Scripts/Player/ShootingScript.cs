@@ -24,6 +24,8 @@ public class ShootingScript : MonoBehaviour, IShoot
 
     public Animator gunanim;
 
+    public Animator playeranim;
+
     public void Shooting() //funktion som tar hand om Shooting - Robin
     {
             if(Input.GetKeyDown(KeyCode.Space) && ammo >= 1)//om spelaren håller ned vänster klick på musen eller space knappen på tangenbordet - Robin
@@ -33,6 +35,7 @@ public class ShootingScript : MonoBehaviour, IShoot
                 recoil = true; //sätter recoil till true - Robin
                 player.transform.localScale = new Vector2(1.1f, 0.8f);
             gunanim.SetBool("spin", true);
+            playeranim.SetBool("shoot", true);
             particles.SetActive(true); //sätter på partiklarna - Robin
                 StartCoroutine(Reload()); //startar den funktionen Reload som är en coroutine - Robin
             }
@@ -55,6 +58,7 @@ public class ShootingScript : MonoBehaviour, IShoot
         {
             yield return new WaitForSeconds(0.15f); //väntar i 0.15 sekunder - Robin
             player.transform.localScale = new Vector2(1, 1f);
+            playeranim.SetBool("shoot", false);
             yield return new WaitForSeconds(0.2f); //väntar i 0.2 sekunder - Robin
             gunanim.SetBool("spin", false);
             yield return new WaitForSeconds(0.2f); //väntar i 0.2 sekunder - Robin
