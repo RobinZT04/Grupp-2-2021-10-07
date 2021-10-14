@@ -15,18 +15,35 @@ public class enemieside : MonoBehaviour
     public Vector2 spawnpoint;
 
     public bool canstart;
-
     void Start()
     {
-        
+        position = Random.Range(1, 4);
     }
-
+    
     // Update is called once per frame
     void Update()
     {
+        if(position == 1)
+        {
+            spawnpoint = box1.position;
+        }
+        if (position == 2)
+        {
+            spawnpoint = box2.position;
+        }
+        if (position == 3)
+        {
+            spawnpoint = box3.position;
+        }
+        if (position == 4)
+        {
+            spawnpoint = box4.position;
+        }
+
         if (canstart)
         {
-            Instantiate(box,(spawnpoint),Quaternion.identity);
+            Instantiate(box, (spawnpoint), Quaternion.identity);
+            canstart = false;
         }
     }
 }
