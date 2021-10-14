@@ -44,6 +44,7 @@ public class ShootingScript : MonoBehaviour, IShoot
 
         if (recoil) //om recoil är true - Robin
         {
+            CameraShake.shaking = true; //sätter på camerashake
             body.AddForce(-transform.up * 8000 * Time.deltaTime); //börja röra spelaren nedåt med velocityn 5000 - Robin
             StartCoroutine(Recoil()); //startar en coroutine - Robin
         }
@@ -53,6 +54,7 @@ public class ShootingScript : MonoBehaviour, IShoot
         {
             yield return new WaitForSeconds(0.2f); //väntar i 0.2 sekunder - Robin
             recoil = false; //sätter recoil till false - Robin
+            CameraShake.shaking = false; //stänger av camera shake
         }
         IEnumerator Reload() //funktionen till coroutinen - Robin
         {
