@@ -5,22 +5,42 @@ using UnityEngine;
 public class EnemyTopMove : MonoBehaviour
 {
     // Referens till rigidbodyn -Henry
-    Rigidbody2D rb;
+    public Rigidbody2D rb;
 
     // Referens till enemyns snabbhet -Henry
-    private int enemyspeed = -3;
+    private float enemyspeed = -3.75f;
+
+    // Referens till enemyn -Henry
+    public GameObject enemytop;
 
     // Start is called before the first frame update
     void Start()
     {
-        // Hämtar componenten och rör enemyn nedåt -Henry
-        rb = GetComponent<Rigidbody2D>();
-        rb.velocity = new Vector2(0, enemyspeed);
+        // Hämtar componenten -Henry
+        //rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // När enemyn träffar tagen "Barrier" förstörs objektet och respawnar -Henry
+        if (collision.transform.tag == "Barrier")
+        {
+            Instantiate(enemytop, new Vector3(Random.Range(-12.5f, 12.5f), Random.Range(11, 20), 0), Quaternion.identity);
+            Destroy(gameObject);
+        }
+
+        // När enemyn blir träffad av "Bullet" förstörs objektet och respawnar -Henry
+        if (collision.transform.tag == "Bullet")
+        {
+            Instantiate(enemytop, new Vector3(Random.Range(-12.5f, 12.5f), Random.Range(11, 20), 0), Quaternion.identity);
+            Destroy(gameObject);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        // Rör enemyn nedåt -Henry
+        rb.velocity = new Vector2(0, enemyspeed);
     }
 }
