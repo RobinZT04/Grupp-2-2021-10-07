@@ -29,6 +29,9 @@ public class EnemyTopMove : MonoBehaviour
             Destroy(gameObject);
         }
 
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
         // När enemyn blir träffad av "Bullet" förstörs objektet och respawnar -Henry
         if (collision.transform.tag == "Bullet")
         {
