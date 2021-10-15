@@ -231,7 +231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 180360172}
-  speed: 804
+  speed: 1483
 --- !u!50 &180360172
 Rigidbody2D:
   serializedVersion: 4
@@ -1001,7 +1001,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1115011392}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.3072, z: 0}
+  m_LocalPosition: {x: 0, y: -2.2, z: 0}
   m_LocalScale: {x: 26.56, y: 0.3499, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
