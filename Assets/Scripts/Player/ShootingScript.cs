@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class ShootingScript : MonoBehaviour, IShoot
 {
+
+    public GameObject bulletparticle; //referens till bullet particle
+
     public GameObject bullet; //referens till bullet prefab - Robin
 
     public GameObject player; //referens till player gameobjectet - Robin
@@ -22,21 +25,22 @@ public class ShootingScript : MonoBehaviour, IShoot
     public float recoilforce; //hur stark är recoilen? - Robin
     public float ammo = 1; //en variabel som räknar antalet ammo du har - Robin
 
-    public Animator gunanim;
+    public Animator gunanim; //referens till gun animator - Robin
 
-    public Animator playeranim;
+    public Animator playeranim; //referens till player animator - Robin
 
     public void Shooting() //funktion som tar hand om Shooting - Robin
     {
-            if(Input.GetKeyDown(KeyCode.Space) && ammo >= 1)//om spelaren håller ned vänster klick på musen eller space knappen på tangenbordet - Robin
+            if(Input.GetKey(KeyCode.Space) && ammo >= 1)//om spelaren håller ned vänster klick på musen eller space knappen på tangenbordet - Robin
             {
                 Instantiate(bullet, new Vector3(bulletpoint.position.x, bulletpoint.position.y + 0.3f, bulletpoint.position.z), Quaternion.identity); //spawnar skottet på bulletpoints position - Robin
                 ammo -= 1; //säger att spelaren har skjutit ett skott - Robin
                 recoil = true; //sätter recoil till true - Robin
                 player.transform.localScale = new Vector2(1.1f, 0.8f);
-            gunanim.SetBool("spin", true);
-            playeranim.SetBool("shoot", true);
-            particles.SetActive(true); //sätter på partiklarna - Robin
+                gunanim.SetBool("spin", true); //sätter snurr animationen till true - Robin
+                playeranim.SetBool("shoot", true); //säter skjut animationen till true - Robin
+                particles.SetActive(true); //sätter på partiklarna - Robin
+                Instantiate(bulletparticle, new Vector3(player.transform.position.x + 0.5f, player.transform.position.y + 0.3f, 0), Quaternion.identity);
                 StartCoroutine(Reload()); //startar den funktionen Reload som är en coroutine - Robin
             }
 
@@ -44,6 +48,7 @@ public class ShootingScript : MonoBehaviour, IShoot
 
         if (recoil) //om recoil är true - Robin
         {
+            CameraShake.shaking = true; //sätter på camerashake
             body.AddForce(-transform.up * 8000 * Time.deltaTime); //börja röra spelaren nedåt med velocityn 5000 - Robin
             StartCoroutine(Recoil()); //startar en coroutine - Robin
         }
@@ -51,8 +56,10 @@ public class ShootingScript : MonoBehaviour, IShoot
 
         IEnumerator Recoil() //funktionen till coroutinen - Robin
         {
-            yield return new WaitForSeconds(0.2f); //väntar i 0.2 sekunder - Robin
+            yield return new WaitForSeconds(0.2f); //väntar i 0.2 sekunder - Robin       
             recoil = false; //sätter recoil till false - Robin
+            CameraShake.shaking = false; //stänger av camera shake
+            
         }
         IEnumerator Reload() //funktionen till coroutinen - Robin
         {
@@ -60,10 +67,11 @@ public class ShootingScript : MonoBehaviour, IShoot
             player.transform.localScale = new Vector2(1, 1f);
             playeranim.SetBool("shoot", false);
             yield return new WaitForSeconds(0.2f); //väntar i 0.2 sekunder - Robin
+            //bulletparticle.SetActive(false);
             gunanim.SetBool("spin", false);
             yield return new WaitForSeconds(0.2f); //väntar i 0.2 sekunder - Robin
             particles.SetActive(false); //stänger av partiklarna - Robin
-            yield return new WaitForSeconds(0.3f); //väntar i 1 sekunder - Robin
+            //yield return new WaitForSeconds(0.1f); //väntar i 1 sekunder - Robin
             ammo = 1; //sätter ammo till 1 - Robin
         }
     }

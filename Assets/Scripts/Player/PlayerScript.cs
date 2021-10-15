@@ -16,4 +16,11 @@ public class PlayerScript : MonoBehaviour
         IDash dasher = GetComponent(typeof(IDash)) as IDash; //säger att Iwalk interfacen är "Shooting" - Robin
         dasher.Dashing(); //startar funktionen Walking i IShoot- Robin
     }
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.transform.tag == "Barrel")
+        {
+            Destroy(gameObject);
+        }
+    }
 }

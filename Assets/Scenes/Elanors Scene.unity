@@ -216,7 +216,6 @@ GameObject:
   m_Component:
   - component: {fileID: 538661432}
   - component: {fileID: 538661431}
-  - component: {fileID: 538661430}
   - component: {fileID: 538661429}
   m_Layer: 0
   m_Name: Square (8)
@@ -251,26 +250,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &538661430
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 538661428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44f5dd6d3e172624da5a4731d6551159, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  position: 0
-  box: {fileID: 0}
-  box1: {fileID: 0}
-  box2: {fileID: 0}
-  box3: {fileID: 0}
-  box4: {fileID: 0}
-  spawnpoint: {x: 0, y: 0}
-  canstart: 0
 --- !u!212 &538661431
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -346,7 +325,6 @@ GameObject:
   m_Component:
   - component: {fileID: 662770105}
   - component: {fileID: 662770104}
-  - component: {fileID: 662770103}
   - component: {fileID: 662770102}
   m_Layer: 0
   m_Name: Square (7)
@@ -381,26 +359,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &662770103
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 662770101}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44f5dd6d3e172624da5a4731d6551159, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  position: 0
-  box: {fileID: 0}
-  box1: {fileID: 0}
-  box2: {fileID: 0}
-  box3: {fileID: 0}
-  box4: {fileID: 0}
-  spawnpoint: {x: 0, y: 0}
-  canstart: 0
 --- !u!212 &662770104
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -476,7 +434,6 @@ GameObject:
   m_Component:
   - component: {fileID: 722522571}
   - component: {fileID: 722522570}
-  - component: {fileID: 722522569}
   - component: {fileID: 722522568}
   m_Layer: 0
   m_Name: Square (5)
@@ -511,26 +468,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &722522569
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 722522567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44f5dd6d3e172624da5a4731d6551159, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  position: 0
-  box: {fileID: 0}
-  box1: {fileID: 0}
-  box2: {fileID: 0}
-  box3: {fileID: 0}
-  box4: {fileID: 0}
-  spawnpoint: {x: 0, y: 0}
-  canstart: 0
 --- !u!212 &722522570
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -606,7 +543,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1286405582}
   - component: {fileID: 1286405581}
-  - component: {fileID: 1286405580}
   - component: {fileID: 1286405579}
   m_Layer: 0
   m_Name: Square (4)
@@ -641,26 +577,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1286405580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1286405578}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44f5dd6d3e172624da5a4731d6551159, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  position: 0
-  box: {fileID: 0}
-  box1: {fileID: 0}
-  box2: {fileID: 0}
-  box3: {fileID: 0}
-  box4: {fileID: 0}
-  spawnpoint: {x: 0, y: 0}
-  canstart: 0
 --- !u!212 &1286405581
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -725,4 +641,55 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1927126704
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1927126706}
+  - component: {fileID: 1927126705}
+  m_Layer: 0
+  m_Name: spawnmanager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1927126705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927126704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44f5dd6d3e172624da5a4731d6551159, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position: 0
+  box: {fileID: 9181069035313288195, guid: 8a438f8617721154d9840fb9c9d0fd8e, type: 3}
+  box1: {fileID: 1286405582}
+  box2: {fileID: 722522571}
+  box3: {fileID: 662770105}
+  box4: {fileID: 538661432}
+  spawnpoint: {x: 0, y: 0}
+  canstart: 1
+--- !u!4 &1927126706
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927126704}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.1069453, y: -2.761841, z: -1.7132057}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
