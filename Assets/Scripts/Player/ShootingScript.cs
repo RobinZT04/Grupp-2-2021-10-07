@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ShootingScript : MonoBehaviour, IShoot
 {
 
-    public GameObject bulletparticle;
+    public GameObject bulletparticle; //referens till bullet particle
 
     public GameObject bullet; //referens till bullet prefab - Robin
 
@@ -25,9 +25,9 @@ public class ShootingScript : MonoBehaviour, IShoot
     public float recoilforce; //hur stark är recoilen? - Robin
     public float ammo = 1; //en variabel som räknar antalet ammo du har - Robin
 
-    public Animator gunanim;
+    public Animator gunanim; //referens till gun animator - Robin
 
-    public Animator playeranim;
+    public Animator playeranim; //referens till player animator - Robin
 
     public void Shooting() //funktion som tar hand om Shooting - Robin
     {
@@ -40,7 +40,7 @@ public class ShootingScript : MonoBehaviour, IShoot
                 gunanim.SetBool("spin", true); //sätter snurr animationen till true - Robin
                 playeranim.SetBool("shoot", true); //säter skjut animationen till true - Robin
                 particles.SetActive(true); //sätter på partiklarna - Robin
-            Instantiate(bulletparticle, new Vector3(player.transform.position.x, player.transform.position.y, 0), Quaternion.identity);
+                Instantiate(bulletparticle, new Vector3(player.transform.position.x + 0.5f, player.transform.position.y + 0.3f, 0), Quaternion.identity);
                 StartCoroutine(Reload()); //startar den funktionen Reload som är en coroutine - Robin
             }
 
