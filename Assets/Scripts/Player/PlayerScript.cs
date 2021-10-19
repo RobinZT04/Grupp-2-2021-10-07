@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerScript : MonoBehaviour
 {
     public GameObject restart;
+    public GameObject restartdetails;
     public void Update()
     {
         Time.timeScale = 1;
@@ -22,6 +23,7 @@ public class PlayerScript : MonoBehaviour
         if(other.transform.tag == "Barrel")
         {
             restart.SetActive(true);
+            restartdetails.SetActive(true);
         }
     }
 }
