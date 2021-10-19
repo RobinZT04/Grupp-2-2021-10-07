@@ -8,7 +8,7 @@ public class EnemyTopMove : MonoBehaviour
     public Rigidbody2D rb;
 
     // Referens till enemyns snabbhet -Henry
-    private float enemyspeed = -3.75f;
+    private float speed;
 
     // Referens till enemyn -Henry
     public GameObject enemytop;
@@ -16,6 +16,12 @@ public class EnemyTopMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Variabeln speed får en random hastighet mellan värderna när spelet startar
+        speed = Random.Range(-1.75f, -4);
+
+        // Rör enemyn nedåt -Henry
+        rb.velocity = new Vector2(0, Random.Range(-2, -50));
+
         // Hämtar componenten -Henry
         //rb = GetComponent<Rigidbody2D>();
     }
@@ -25,7 +31,7 @@ public class EnemyTopMove : MonoBehaviour
         // När enemyn träffar tagen "Barrier" förstörs objektet och respawnar -Henry
         if (collision.transform.tag == "Barrier")
         {
-            Instantiate(enemytop, new Vector3(Random.Range(-12.5f, 12.5f), Random.Range(11, 20), 0), Quaternion.identity);
+            Instantiate(enemytop, new Vector3(Random.Range(-8.5f, 8.5f), Random.Range(9, 15), 0), Quaternion.identity);
             Destroy(gameObject);
         }
 
@@ -35,7 +41,7 @@ public class EnemyTopMove : MonoBehaviour
         // När enemyn blir träffad av "Bullet" förstörs objektet och respawnar -Henry
         if (collision.transform.tag == "Bullet")
         {
-            Instantiate(enemytop, new Vector3(Random.Range(-12.5f, 12.5f), Random.Range(11, 20), 0), Quaternion.identity);
+            Instantiate(enemytop, new Vector3(Random.Range(-8.5f, 8.5f), Random.Range(9, 15), 0), Quaternion.identity);
             Destroy(gameObject);
         }
     }
@@ -43,7 +49,7 @@ public class EnemyTopMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Rör enemyn nedåt -Henry
-        rb.velocity = new Vector2(0, enemyspeed);
+        // Ger enemyn hastigheten som finns i variabeln "speed" -Henry
+        rb.velocity = new Vector2(0, speed);
     }
 }
