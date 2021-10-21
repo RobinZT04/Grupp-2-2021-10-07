@@ -12,6 +12,11 @@ public class enemieside : MonoBehaviour
     public Transform box3; //En referens till box3- Elanor 
     public Transform box4; //En referens till box4- Elanor 
 
+    public GameObject varning1; //Ett gameobject som heter varning1- Elanor
+    public GameObject varning2; //Ett gameobject som heter varning2- Elanor
+    public GameObject varning3; //Ett gameobject som heter varning3- Elanor
+    public GameObject varning4; //Ett gameobject som heter varning4- Elanor
+
     public Vector2 spawnpoint; //En vector2 variabel- Elanor
 
     public bool canstart; //En bool som jag har döpt till canstart- Elanor 
@@ -26,28 +31,37 @@ public class enemieside : MonoBehaviour
     {
         if(position == 1) //Om position är = 1?- Elanor
         {
+            varning1.SetActive(true);
             spawnpoint = box1.position; //Kommer boxen spawna på position 1- Elanor 
             movement.speed = Random.Range(10, 20); //Ger den en movementspeed som kan va mellan 10,20- Elanor 
+            StartCoroutine(Deactivate()); //Callar min coroutin Deactivate- Elanor 
         }
         if (position == 2)  //Om position är = 2?- Elanor
         {
+            varning2.SetActive(true);
             spawnpoint = box2.position;//Kommer boxen spawna på position 2- Elanor 
             movement.speed = Random.Range(10, 20); //Ger den en movementspeed som kan va mellan 10,20- Elanor 
+            StartCoroutine(Deactivate()); //Callar min coroutin Deactivate- Elanor 
         }
         if (position == 3)  //Om position är = 3?- Elanor
         {
+            varning3.SetActive(true);
             spawnpoint = box3.position;//Kommer boxen spawna på position 3- Elanor 
             movement.speed = Random.Range(-10, -20); //Ger den en movementspeed som kan va mellan 10,20- Elanor 
+            StartCoroutine(Deactivate()); //Callar min coroutin Deactivate- Elanor 
         }
         if (position == 4)  //Om position är = 4?- Elanor
         {
+            varning4.SetActive(true);
             spawnpoint = box4.position;//Kommer boxen spawna på position 4- Elanor 
             movement.speed = Random.Range(-10, -20); //Ger den en movementspeed som kan va mellan 10,20- Elanor 
+            StartCoroutine(Deactivate()); //Callar min coroutin Deactivate- Elanor 
         }
 
         if (canstart) //Om canstart?
         {
             Instantiate(box, (spawnpoint), Quaternion.identity); //Spawnar boxen på spawnpointen- Elanor
+            position = 0; //Att positionen variabeln blir 0- Elanor
             StartCoroutine(Spawnagain()); //Callar min coroutin- Elanor 
             canstart = false; //Canstart är falsk (kan inte spawna mer objekts)- Elanor
         }
@@ -61,4 +75,12 @@ public class enemieside : MonoBehaviour
 
     }
 
+    IEnumerator Deactivate() //Coroutin- Elanor
+    {
+        yield return new WaitForSeconds(1.5f); //Den väntar 1.5 sek innan nånting händer igen- Elanor 
+        varning1.SetActive(false); //varning1 blir falsk- Elanor 
+        varning2.SetActive(false); //varning2 blir falsk- Elanor 
+        varning3.SetActive(false); //varning3 blir falsk- Elanor 
+        varning4.SetActive(false); //varning4 blir falsk- Elanor 
+    }
 }
