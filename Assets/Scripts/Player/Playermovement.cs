@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Playermovement : MonoBehaviour, IWalk
 {
+    public bool iswalking;
     public Animator playeranim;
     public Rigidbody2D body; //referens till spelaren Rigidbody2D - Robin
 
@@ -17,9 +18,15 @@ public class Playermovement : MonoBehaviour, IWalk
         float horiz = Input.GetAxis("Horizontal"); //gör en float variabel som heter horiz och ger den värdet av input.getaxis av "Horizontal" - Robin
 
         body.velocity = new Vector2(horiz * speed * Time.deltaTime, vert * speed * Time.deltaTime); //sätter body.velocity till horizons velocity samt verticals velocity - Robin
-            if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.W))
+
+        if (body.velocity.magnitude > 0)
         {
             playeranim.SetBool("Walking", true);
         }
+        else
+        {
+            playeranim.SetBool("Walking", false);
+        }
+
     }
 }

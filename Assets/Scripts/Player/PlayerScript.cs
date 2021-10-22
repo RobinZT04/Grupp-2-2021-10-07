@@ -6,6 +6,7 @@ public class PlayerScript : MonoBehaviour
 {
     public GameObject restart;
     public GameObject restartdetails;
+    public Animator player;
     public void Update()
     {
         Time.timeScale = 1;
@@ -27,6 +28,7 @@ public class PlayerScript : MonoBehaviour
         {
             restart.SetActive(true);
             restartdetails.SetActive(true);
+            player.SetBool("Dead", true);
         }
     }
 }
