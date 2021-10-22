@@ -36,7 +36,7 @@ public class ShootingScript : MonoBehaviour, IShoot
                 Instantiate(bullet, new Vector3(bulletpoint.position.x, bulletpoint.position.y + 0.3f, bulletpoint.position.z), Quaternion.identity); //spawnar skottet på bulletpoints position - Robin
                 ammo -= 1; //säger att spelaren har skjutit ett skott - Robin
                 recoil = true; //sätter recoil till true - Robin
-                player.transform.localScale = new Vector2(1.1f, 0.8f);
+                player.transform.localScale += new Vector3(1f, 0.8f,0);
                 gunanim.SetBool("spin", true); //sätter snurr animationen till true - Robin
                 playeranim.SetBool("shoot", true); //säter skjut animationen till true - Robin
                 particles.SetActive(true); //sätter på partiklarna - Robin
