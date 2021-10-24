@@ -146,3 +146,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 6515155077438789473}
   enemytop: {fileID: 6515155077438789474}
+  bloodEffect: {fileID: 9132500817398998268, guid: beab80645b467b14ea2b90ad23ad329a, type: 3}

@@ -13,6 +13,9 @@ public class EnemyTopMove : MonoBehaviour
     // Referens till enemyn -Henry
     public GameObject enemytop;
 
+    // Referens till blodeffekten; -Henry
+    public GameObject bloodEffect;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,20 +31,22 @@ public class EnemyTopMove : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // När enemyn träffar tagen "Barrier" förstörs objektet och respawnar -Henry
+        // När enemyn träffar tagen "Barrier" förstörs objektet, spelar blod-animationen och respawnar objektet -Henry
         if (collision.transform.tag == "Barrier")
         {
             Instantiate(enemytop, new Vector3(Random.Range(-8.5f, 8.5f), Random.Range(9, 15), 0), Quaternion.identity);
+            Instantiate(bloodEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // När enemyn blir träffad av "Bullet" förstörs objektet och respawnar -Henry
+        // När enemyn blir träffad av "Bullet" förstörs objektet, spelar blod-animationen och respawnar objektet -Henry
         if (collision.transform.tag == "Bullet")
         {
             Instantiate(enemytop, new Vector3(Random.Range(-8.5f, 8.5f), Random.Range(9, 15), 0), Quaternion.identity);
+            Instantiate(bloodEffect,transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
