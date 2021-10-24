@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossActivation : MonoBehaviour
 {
-    
+    /*
 
     private void OnTriggerEnter(Collider2D collision)
     {
@@ -21,5 +21,5 @@ public class BossActivation : MonoBehaviour
         yield return new WaitForSeconds(3); // and after 3 seconds 
         PlayerController.instance.speed = currentSpeed; // the 0 will go back to the ccurrentSpeed
     }
-
+    */
 }
