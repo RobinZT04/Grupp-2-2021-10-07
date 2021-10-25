@@ -4,13 +4,24 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
-    public GameObject restart;
-    public GameObject restartdetails;
-    public Animator player;
+    public GameObject restart; //referens till restart knappen  - Robin
+    public GameObject restartdetails; //referens till restart sprites - Robin
+    public GameObject gun; //referens till pistolen  - Robin
+
+    public Animator player; //referens till player animator  - Robin
+
+    public bool dead; //variabel bool som kollar om spelaren är död  - Robin
+
+    public void Start()
+    {
+        dead = false; //sätter att spelaren inte är död  - Robin
+    }
     public void Update()
     {
-        Time.timeScale = 1;
-        IWalk walker = GetComponent(typeof(IWalk)) as IWalk; //säger att Iwalk interfacen är "walker" - Robin
+        if (!dead) //om spelaren är död  - Robin
+        {
+            //Time.timeScale = 1;
+            IWalk walker = GetComponent(typeof(IWalk)) as IWalk; //säger att Iwalk interfacen är "walker" - Robin
         walker.Walking(); //startar funktionen Walking i IWalk - Robin
 
         IShoot shooter = GetComponent(typeof(IShoot)) as IShoot; //säger att Iwalk interfacen är "Shooting" - Robin
@@ -18,15 +29,18 @@ public class PlayerScript : MonoBehaviour
 
         IDash dasher = GetComponent(typeof(IDash)) as IDash; //säger att Iwalk interfacen är "Shooting" - Robin
         dasher.Dashing(); //startar funktionen Walking i IShoot- Robin
+        }
 
     }
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnCollisionEnter2D(Collision2D other) 
     {
-        if(other.transform.tag == "Barrel")
+        if(other.transform.tag == "Barrel") //om du collidaer med Barrel  - Robin
         {
-            restart.SetActive(true);
-            restartdetails.SetActive(true);
-            player.SetBool("Dead", true);
+            restart.SetActive(true); //sätter på restart knappen  - Robin
+            restartdetails.SetActive(true); //sätter på restart sprites  - Robin
+            player.SetBool("Dead", true); //sätter player animationen dead till true  - Robin
+            gun.SetActive(false); //tänger av pistolen  - Robin
+            dead = true; //sätter spelaren till död - Robin
         }
     }
 }

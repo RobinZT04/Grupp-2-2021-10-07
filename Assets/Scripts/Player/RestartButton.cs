@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class RestartButton : MonoBehaviour
 {
-    public void Restart()
+    public void Restart() //funktion som restartar - Robin
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); //reloadar scenen - Robin
     }
 }

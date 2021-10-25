@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class CameraShake : MonoBehaviour
 {
-    public Vector2 amplitude;
-    public Vector2 freq;
-    public Vector2 time;
+    public Vector2 amplitude; //vector 2 variabel för amplitude värden - Robin
+    public Vector2 freq; //vector 2 variabel för frequens värden - Robin
+    public Vector2 time; //vector 2 variabel för time värden - Robin
 
-    public static bool shaking;
+    public static bool shaking; //skakar skärmen? - Robin
 
 
     // Update is called once per frame
@@ -25,7 +25,7 @@ public class CameraShake : MonoBehaviour
 
             transform.localPosition = shakePos; //sätter transform.localPosition till shakePos - Robin
         }
-        else //annars
+        else //annars - Robin
         {
             transform.localPosition = new Vector3(0, 0, -10); //sätt den lokala positionen till (0,0,-10) -10 finns eftersom att man annars inte kan se objekten/spritesen - Robin
         }

@@ -8,7 +8,7 @@ public class DashScript : MonoBehaviour, IDash
     public bool candash; //kan gubben dasha? - Robin
     public Rigidbody2D body; //referens till rigidbody2D - Robin
     public float dashspeed; //hur snabbt dashar man - Robin
-    public GameObject clock;
+    public GameObject clock; //referns till UI klockan - Robin
     public void Start()
     {
         dash = false; //dashar inte - Robin
@@ -43,10 +43,10 @@ public class DashScript : MonoBehaviour, IDash
     }
     IEnumerator Dash() //IEnumerator funktion som heter Dash - Robin
     {
-        clock.SetActive(true);
+        clock.SetActive(true); //sätter på klockan som visar att man dashar - Robin
         Time.timeScale = 0.25f; //sätter time till [tid värdet] - Robin
         yield return new WaitForSeconds(0.3f); //vänta [antal sekunder] - Robin
-        clock.SetActive(false);
+        clock.SetActive(false); //stänger av klockan som visar att man dashar - Robin
         Time.timeScale = 1f; //sätter time till [tid värdet] - Robin
         dash = false; //sätter dash till false - Robin
         candash = false; //sätter candash till false - Robin

@@ -36,11 +36,11 @@ public class ShootingScript : MonoBehaviour, IShoot
                 Instantiate(bullet, new Vector3(bulletpoint.position.x, bulletpoint.position.y + 0.3f, bulletpoint.position.z), Quaternion.identity); //spawnar skottet på bulletpoints position - Robin
                 ammo -= 1; //säger att spelaren har skjutit ett skott - Robin
                 recoil = true; //sätter recoil till true - Robin
-                player.transform.localScale += new Vector3(1f, 0.8f,0);
-                gunanim.SetBool("spin", true); //sätter snurr animationen till true - Robin
+                player.transform.localScale += new Vector3(1f, 0.8f,0); //ökar spelarens scale - Robin
                 playeranim.SetBool("shoot", true); //säter skjut animationen till true - Robin
                 particles.SetActive(true); //sätter på partiklarna - Robin
-                Instantiate(bulletparticle, new Vector3(player.transform.position.x + 0.5f, player.transform.position.y + 0.3f, 0), Quaternion.identity);
+                gunanim.SetBool("Shooting", true);
+                 Instantiate(bulletparticle, new Vector3(player.transform.position.x + 0.5f, player.transform.position.y + 0.3f, 0), Quaternion.identity); //spawnar skottet - Robin
                 StartCoroutine(Reload()); //startar den funktionen Reload som är en coroutine - Robin
             }
 
@@ -63,15 +63,16 @@ public class ShootingScript : MonoBehaviour, IShoot
         }
         IEnumerator Reload() //funktionen till coroutinen - Robin
         {
-            yield return new WaitForSeconds(0.15f); //väntar i 0.15 sekunder - Robin
-            player.transform.localScale = new Vector2(1, 1f);
-            playeranim.SetBool("shoot", false);
-            yield return new WaitForSeconds(0.2f); //väntar i 0.2 sekunder - Robin
-            //bulletparticle.SetActive(false);
-            gunanim.SetBool("spin", false);
+            yield return new WaitForSeconds(0.5f); //väntar i 0.15 sekunder - Robin
+            gunanim.SetBool("spin", true); //sätter snurr animationen till true - Robin
+            player.transform.localScale = new Vector2(1, 1f); //gör gubben till normal skala - Robin
+            gunanim.SetBool("Shooting", false); //stänger av skjut animation - Robin
+            playeranim.SetBool("shoot", false); //stänger av snurr animationen på pistolen
+            yield return new WaitForSeconds(0.3f); //väntar i 0.2 sekunder - Robin
+
+            gunanim.SetBool("spin", false); //aktiverar snurr animationen på pistolen - Robin
             yield return new WaitForSeconds(0.2f); //väntar i 0.2 sekunder - Robin
             particles.SetActive(false); //stänger av partiklarna - Robin
-            //yield return new WaitForSeconds(0.1f); //väntar i 1 sekunder - Robin
             ammo = 1; //sätter ammo till 1 - Robin
         }
     }
