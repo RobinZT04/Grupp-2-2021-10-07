@@ -37,7 +37,7 @@ public class BossBehavior : MonoBehaviour
         if (countdown < 0) // if countdown if less then 0 
         {
             ShootPlayer();
-            countdown = timeToShoot; // we shoot and restart to 3sec
+            countdown = timeToShoot; // we shoot and restart to 1sec
             Teleport();
         }
     }

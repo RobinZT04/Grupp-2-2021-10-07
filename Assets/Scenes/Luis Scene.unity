@@ -1469,7 +1469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcdaf422ba9f1e140a239e94915c0f93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secondsToDestroy: 4
+  secondsToDestroy: 3
 --- !u!4 &1182498805
 Transform:
   m_ObjectHideFlags: 0
@@ -1690,7 +1690,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1994,7 +1994,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2562f3f5029fd5949b18028d59fd948b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bossName: Bobbo
+  bossName: 
   healthPoints: 10
   speed: 3
   knockbackForceX: 0
@@ -2158,7 +2158,6 @@ GameObject:
   - component: {fileID: 1828244811}
   - component: {fileID: 1828244810}
   - component: {fileID: 1828244809}
-  - component: {fileID: 1828244808}
   m_Layer: 5
   m_Name: GameManeger
   m_TagString: Untagged
@@ -2166,18 +2165,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1828244808
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1828244807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 953e44a72c53f2f40ad5c45d8e057532, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1828244809
 MonoBehaviour:
   m_ObjectHideFlags: 0

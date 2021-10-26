@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
 
     public static PlayerController instance;
 
+  
+
     void Update()
     {
         movment.x = Input.GetAxisRaw("Horizontal");
