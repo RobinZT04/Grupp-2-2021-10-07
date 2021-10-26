@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class enemieside : MonoBehaviour
 {
-    public float position; //En float variabel- Elanor
+    public static float position; //En float variabel- Elanor
     public GameObject box; //Ett gameobject som heter box- Elanor
 
     public Transform box1; //En referens till box1- Elanor 
@@ -56,6 +56,7 @@ public class enemieside : MonoBehaviour
             spawnpoint = box4.position;//Kommer boxen spawna på position 4- Elanor 
             movement.speed = Random.Range(-10, -20); //Ger den en movementspeed som kan va mellan 10,20- Elanor 
             StartCoroutine(Deactivate()); //Callar min coroutin Deactivate- Elanor 
+            transform.eulerAngles = (new Vector3(0, 180, 0));
         }
 
         if (canstart) //Om canstart?

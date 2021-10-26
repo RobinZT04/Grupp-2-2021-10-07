@@ -11,7 +11,7 @@ public class FlameScript : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         moveSpeed = GetComponent<Boss>().speed; //The movespeed is the same as Getcomponent Boss speed
         rb2d = GetComponent<Rigidbody2D>(); // rb2d is the rigidbody that is inside the gameobject
