@@ -7,7 +7,9 @@ public class barrier : MonoBehaviour
    public float hp;
 
     public Animator table;
-    
+    public Animator pole;
+    public Animator barrel;
+
 
     // Start is called before the first frame update
     void Start()
@@ -21,14 +23,14 @@ public class barrier : MonoBehaviour
         if (hp == 2)
         {
             table.SetBool("hptwo", true);
+            pole.SetBool("hptwo", true);
+            barrel.SetBool("hptwo", true);
         }
         if (hp ==1) 
         {
             table.SetBool("hpone", true);
-        }
-        if (hp == 1)
-        {
-           
+            pole.SetBool("hpone", true);
+            barrel.SetBool("hpone", true);
         }
     }
 
@@ -37,7 +39,6 @@ public class barrier : MonoBehaviour
         if (other.transform.tag == "Enemy")
         {
             hp -= 1;
-            
         }
     }
 }
