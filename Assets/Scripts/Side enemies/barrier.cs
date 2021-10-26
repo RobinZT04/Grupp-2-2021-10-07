@@ -7,8 +7,6 @@ public class barrier : MonoBehaviour
    public float hp;
 
     public Animator table;
-    public Animator barrel;
-    public Animator pole;
     
 
     // Start is called before the first frame update
@@ -23,18 +21,16 @@ public class barrier : MonoBehaviour
         if (hp == 2)
         {
             table.SetBool("hptwo", true);
-            barrel.SetBool("hptwo", true);
-            pole.SetBool("hptwo", true);
         }
         if (hp ==1) 
         {
             table.SetBool("hpone", true);
-            barrel.SetBool("hpone", true);
-            pole.SetBool("hpone", true);
+        }
+        if (hp == 1)
+        {
+           
         }
     }
-        
-    
 
     private void OnCollisionEnter2D(Collision2D other)
     {
