@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class barrier : MonoBehaviour
 {
-    public float hp;
+   public float hp;
 
     public Animator table;
     
@@ -18,13 +18,13 @@ public class barrier : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (hp == 3)
+        if (hp == 2)
         {
-            table.SetBool("hp1", true);
+            table.SetBool("hptwo", true);
         }
-        if (hp ==2) 
+        if (hp ==1) 
         {
-            table.SetBool("hp2", true);
+            table.SetBool("hpone", true);
         }
         if (hp == 1)
         {

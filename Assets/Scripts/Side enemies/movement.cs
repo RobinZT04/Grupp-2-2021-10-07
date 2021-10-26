@@ -19,6 +19,15 @@ public class movement : MonoBehaviour
     void Update()
     {
         body.velocity = new Vector2(speed, 0); //Ger bodyn velocity- Elanor
+
+        if (enemieside.position == 1 )
+        {
+            transform.eulerAngles = (new Vector3(0, 180, 0));
+            Debug.Log("funkar");
+        } else
+        {
+            transform.eulerAngles = (new Vector3(0, 0, 0));
+        }
     }
 
     IEnumerator Destroybox() //Min coroutine- Elanor 
