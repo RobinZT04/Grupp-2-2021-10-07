@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyTopDeath : MonoBehaviour
+public class EnemyTopCounter : MonoBehaviour
 {
+    [SerializeField]
+    public static float EnemyCounter;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        EnemyCounter = 0;
     }
 
     // Update is called once per frame

@@ -34,8 +34,12 @@ public class EnemyTopMove : MonoBehaviour
         // När enemyn träffar tagen "Barrier" förstörs objektet, spelar blod-animationen och respawnar objektet -Henry
         if (collision.transform.tag == "Barrier")
         {
-            Instantiate(enemytop, new Vector3(Random.Range(-8.5f, 8.5f), Random.Range(9, 15), 0), Quaternion.identity);
+            if (EnemyTopCounter.EnemyCounter <= 100)
+            {
+                Instantiate(enemytop, new Vector3(Random.Range(-8.5f, 8.5f), Random.Range(9, 15), 0), Quaternion.identity);
+            }
             Instantiate(bloodEffect, transform.position, Quaternion.identity);
+            EnemyTopCounter.EnemyCounter += 1;
             Destroy(gameObject);
         }
 
@@ -45,8 +49,12 @@ public class EnemyTopMove : MonoBehaviour
         // När enemyn blir träffad av "Bullet" förstörs objektet, spelar blod-animationen och respawnar objektet -Henry
         if (collision.transform.tag == "Bullet")
         {
-            Instantiate(enemytop, new Vector3(Random.Range(-8.5f, 8.5f), Random.Range(9, 15), 0), Quaternion.identity);
+            if (EnemyTopCounter.EnemyCounter <= 100)
+            {
+                Instantiate(enemytop, new Vector3(Random.Range(-8.5f, 8.5f), Random.Range(9, 15), 0), Quaternion.identity);
+            }
             Instantiate(bloodEffect,transform.position, Quaternion.identity);
+            EnemyTopCounter.EnemyCounter += 1;
             Destroy(gameObject);
         }
     }
