@@ -34,21 +34,22 @@ public class EnemyTopMove : MonoBehaviour
         // När enemyn träffar tagen "Barrier" förstörs objektet, spelar blod-animationen och respawnar objektet -Henry
         if (collision.transform.tag == "Barrier")
         {
+            // Enemies kommer bara skapas när det finns 100 eller mindre enemies -Henry
             if (EnemyTopCounter.EnemyCounter <= 100)
             {
                 Instantiate(enemytop, new Vector3(Random.Range(-8.5f, 8.5f), Random.Range(9, 15), 0), Quaternion.identity);
             }
             Instantiate(bloodEffect, transform.position, Quaternion.identity);
-            EnemyTopCounter.EnemyCounter += 1;
             Destroy(gameObject);
         }
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // När enemyn blir träffad av "Bullet" förstörs objektet, spelar blod-animationen och respawnar objektet -Henry
+        // När enemyn blir träffad av "Bullet" förstörs enemyn, spelar blod-animationen och respawnar enemyn -Henry
         if (collision.transform.tag == "Bullet")
         {
+            // Enemies kommer bara skapas när det finns 100 eller mindre enemies -Henry
             if (EnemyTopCounter.EnemyCounter <= 100)
             {
                 Instantiate(enemytop, new Vector3(Random.Range(-8.5f, 8.5f), Random.Range(9, 15), 0), Quaternion.identity);
