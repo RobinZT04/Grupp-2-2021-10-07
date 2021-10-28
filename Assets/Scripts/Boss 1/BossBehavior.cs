@@ -11,16 +11,22 @@ public class BossBehavior : MonoBehaviour
 
     public float timeToShoot, countdown;
 
-    public float bossHealth, currentHealth;
+    public float Hitpoints;
+    public float MaxHitpoints;
 
-    public Image healthImg;
+    public HealthbarBehaviour Healthbar;
 
+
+    
 
     private void Start()
     {
         var initialPosition = Random.Range(0, transforms.Length); // the number that we get randomly 
         transform.position = transforms[initialPosition].position; // will be added to our array and will be teleported to them randomly.
         countdown = timeToShoot;
+
+        Hitpoints = MaxHitpoints;
+        Healthbar.SetHealth(Hitpoints, MaxHitpoints);
     }
 
 
@@ -56,8 +62,7 @@ public class BossBehavior : MonoBehaviour
 
     public void DamageBoss()
     {
-        currentHealth = GetComponent<Boss>().healthPoints;
-        healthImg.fillAmount = currentHealth / bossHealth; 
+        
     }
 
 }

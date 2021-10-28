@@ -5,7 +5,7 @@ using UnityEngine;
 public class FlameScript : MonoBehaviour
 {
     float moveSpeed;
-    Rigidbody2D rb2d;
+    public Rigidbody2D rb2d;
     Vector2 moveDirection;
     PlayerController target;
 
