@@ -29,10 +29,14 @@ public class ShootingScript : MonoBehaviour, IShoot
 
     public Animator playeranim; //referens till player animator - Robin
 
+    public AudioSource gunshot; //referens till audiosource för pistol skottet - Robin
+    public AudioClip gunshotclip; //referens till gunshot clip - Robin
+
     public void Shooting() //funktion som tar hand om Shooting - Robin
     {
             if(Input.GetKey(KeyCode.Space) && ammo >= 1)//om spelaren håller ned vänster klick på musen eller space knappen på tangenbordet - Robin
             {
+                gunshot.PlayOneShot(gunshotclip, 0.7f); //spela gunshot 1 gång - Robin
                 Instantiate(bullet, new Vector3(bulletpoint.position.x, bulletpoint.position.y + 0.3f, bulletpoint.position.z), Quaternion.identity); //spawnar skottet på bulletpoints position - Robin
                 ammo -= 1; //säger att spelaren har skjutit ett skott - Robin
                 recoil = true; //sätter recoil till true - Robin
