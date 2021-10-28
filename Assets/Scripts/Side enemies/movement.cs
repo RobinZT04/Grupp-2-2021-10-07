@@ -20,8 +20,9 @@ public class movement : MonoBehaviour
     {
         body.velocity = new Vector2(speed, 0); //Ger bodyn velocity- Elanor
 
-        if (enemieside.position == 1 )
+        if (enemieside.turnedrat)
         {
+            Debug.Log("funkar1");
             transform.eulerAngles = (new Vector3(0, 180, 0));
             Debug.Log("funkar");
         } else
@@ -32,7 +33,7 @@ public class movement : MonoBehaviour
 
     IEnumerator Destroybox() //Min coroutine- Elanor 
     {
-        yield return new WaitForSeconds(10); //Vänta i 10 sekunder innan nästa del händer- Elanor 
+        yield return new WaitForSeconds(6); //Vänta i 10 sekunder innan nästa del händer- Elanor 
         Destroy(gameObject); //Objectet förstöra sig själv (efter då 10 sekunder)- Elanor
     }
 
