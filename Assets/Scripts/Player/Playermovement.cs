@@ -11,6 +11,15 @@ public class Playermovement : MonoBehaviour, IWalk
     [Range(200f, 1500f)] //gör en "slider" i inspectorn vilket gör det lättare att justera fart till spelaren - Robin
     public float speed; //variabel till speed - Robin
 
+    public AudioClip walkingclip; //referens till walking clip - Robin
+    public AudioSource walking; //referens till walking audio source - Robin 
+
+    public bool playing;
+
+    public void Start()
+    {
+        playing = false;
+    }
 
     public void Walking()
     {
@@ -22,11 +31,16 @@ public class Playermovement : MonoBehaviour, IWalk
         if (body.velocity.magnitude > 0) //om spelaren velocity är högre än 0  - Robin
         {
             playeranim.SetBool("Walking", true); //spela walking animation  - Robin
+            if (!walking.isPlaying)
+            {
+                walking.Play();
+            }
+            
         }
         else //annars - Robin
         {
             playeranim.SetBool("Walking", false); //spela inte walking animation
+            walking.Stop();
         }
-
     }
 }
