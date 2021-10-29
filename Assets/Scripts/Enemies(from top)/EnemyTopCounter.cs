@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyTopCounter : MonoBehaviour
 {
-    [SerializeField]
     public static float EnemyCounter;
 
     // Start is called before the first frame update

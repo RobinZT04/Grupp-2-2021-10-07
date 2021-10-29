@@ -34,7 +34,7 @@ public class EnemyTopMove : MonoBehaviour
         // När enemyn träffar tagen "Barrier" förstörs objektet, spelar blod-animationen och respawnar objektet -Henry
         if (collision.transform.tag == "Barrier")
         {
-            if (EnemyTopCounter.EnemyCounter <= 5)
+            if (EnemyTopCounter.EnemyCounter <= 40)
             {
                 Instantiate(enemytop, new Vector3(Random.Range(-8.5f, 8.5f), Random.Range(9, 15), 0), Quaternion.identity);
                 print("Enemy hit by wall");
@@ -50,7 +50,7 @@ public class EnemyTopMove : MonoBehaviour
         // När enemyn blir träffad av "Bullet" förstörs objektet, spelar blod-animationen och respawnar objektet -Henry
         if (collision.transform.tag == "Bullet")
         {
-            if (EnemyTopCounter.EnemyCounter <= 5)
+            if (EnemyTopCounter.EnemyCounter <= 40)
             {
                 print("Enemy hit by bullet");
                 Instantiate(enemytop, new Vector3(Random.Range(-8.5f, 8.5f), Random.Range(9, 15), 0), Quaternion.identity);
@@ -66,7 +66,7 @@ public class EnemyTopMove : MonoBehaviour
     {
         // Ger enemyn hastigheten som finns i variabeln "speed" -Henry
         rb.velocity = new Vector2(0, speed);
-        if (EnemyTopCounter.EnemyCounter >= 5)
+        if (EnemyTopCounter.EnemyCounter >= 40)
         {
             Destroy(gameObject);
         }
