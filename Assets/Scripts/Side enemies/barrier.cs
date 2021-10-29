@@ -10,8 +10,8 @@ public class barrier : MonoBehaviour
     public Animator pole; //En animator för pole - Elanor 
     public Animator barrel; //En animator för barrel - Elanor
     
-    public AudioSource broken;
-    public AudioClip brokenclip;
+    public AudioSource broken; //En referrns till min audiosource i unity- Elanor 
+    public AudioClip brokenclip; //En referens till själva lkud klippet- Elanor
 
 
 
@@ -30,7 +30,7 @@ public class barrier : MonoBehaviour
             pole.SetBool("hptwo", true); //Att polens bool "hptwo" i animatorn ska bli true- Elanor 
             barrel.SetBool("hptwo", true); //Att barrels bool "hptwo" i animatorn ska bli true- Elanor 
         }
-        if (hp ==1) 
+        if (hp ==1) //Om Hp är på 1?
         {
             table.SetBool("hpone", true); //Att tables bool "hpone" i animatorn ska bli true- Elanor 
             pole.SetBool("hpone", true); //Att poles bool "hpone" i animatorn ska bli true- Elanor 
@@ -43,7 +43,7 @@ public class barrier : MonoBehaviour
         if (other.transform.tag == "Enemy") //Om något går in i barriären med tagen "enemy"?- Elanor 
         {
             hp -= 1; //Så kommer barriären ta -1 hp- Elanor
-            broken.PlayOneShot(brokenclip, 0.7f);
+            broken.PlayOneShot(brokenclip, 0.7f); //Spela ett ljudklipp som är brokenclip med volymen 0,7- Elanor
         }
     }
 }
