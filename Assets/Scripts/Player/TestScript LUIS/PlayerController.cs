@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 //Made by José Luis
 public class PlayerController : MonoBehaviour
@@ -17,7 +18,8 @@ public class PlayerController : MonoBehaviour
 
     public static PlayerController instance;
 
-  
+    public ProjectileBehaviour ProjectilePrefab;
+    public Transform LunchOffset;
 
     void Update()
     {
@@ -26,6 +28,10 @@ public class PlayerController : MonoBehaviour
 
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition); // this will just convert our mouse position from pixel coordinates to world units and by the way now we know where our mouse is on our screen
 
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Instantiate(ProjectilePrefab, LunchOffset.position, transform.rotation);
+        }
     }
 
     void FixedUpdate()

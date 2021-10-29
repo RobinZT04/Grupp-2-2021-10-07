@@ -38,4 +38,5 @@ public class BossProjectile : MonoBehaviour
 			Object.Destroy(this.gameObject);
 		}
 	}
+
 }
