@@ -9,6 +9,10 @@ public class MenuButtonController : MonoBehaviour
     [SerializeField] int maxIndex;
     public AudioSource audioSource;
 
+    public GameObject box1;
+        public GameObject box2;
+        public GameObject box3;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +21,24 @@ public class MenuButtonController : MonoBehaviour
 
     // Update is called once per frame
     void Update(){
+        if(index == 0)
+        {
+            box1.SetActive(true);
+            box2.SetActive(false);
+            box3.SetActive(false);
+        }
+        if (index == 1)
+        {
+            box1.SetActive(false);
+            box2.SetActive(true);
+            box3.SetActive(false);
+        }
+        if (index == 2)
+        {
+            box1.SetActive(false);
+            box2.SetActive(false);
+            box3.SetActive(true);
+        }
         //the moment they release the key meaning the moment the input axis for vertical is set to 0 
         if (Input.GetAxis ("Vertical") != 0) { // we are going to check if their vertical axis for their input meaning pressing Up or Down  and if it's not equal to 0 it will start incrementing our index variables
             if (!keyDown){ // this will check and it will say if the user has pressed the key we can fire all the code from here down to KeyDown = true;

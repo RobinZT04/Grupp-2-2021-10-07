@@ -12,13 +12,35 @@ public class PlayerScript : MonoBehaviour
 
     public bool dead; //variabel bool som kollar om spelaren är död  - Robin
 
+    public GameObject boss;
+
+    public bool bossspawn;
+
 
     public void Start()
     {
         dead = false; //sätter att spelaren inte är död  - Robin
+        bossspawn = false;
     }
     public void Update()
     {
+        if (!bossspawn)
+        {
+            if (EnemyTopCounter.EnemyCounter >= 5)
+            {
+                boss.SetActive(true);
+                bossspawn = true;
+            }
+        }
+
+        if (barrier.hp <= 0)
+        {
+            restart.SetActive(true); //sätter på restart knappen  - Robin
+            restartdetails.SetActive(true); //sätter på restart sprites  - Robin
+            player.SetBool("Dead", true); //sätter player animationen dead till true  - Robin
+            gun.SetActive(false); //tänger av pistolen  - Robin
+            dead = true; //sätter spelaren till död - Robin
+        }
         if (!dead) //om spelaren är död  - Robin
         {
             //Time.timeScale = 1;
@@ -51,5 +73,6 @@ public class PlayerScript : MonoBehaviour
             gun.SetActive(false); //tänger av pistolen  - Robin
             dead = true; //sätter spelaren till död - Robin
         }
+
     }
 }

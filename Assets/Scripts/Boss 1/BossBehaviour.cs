@@ -11,9 +11,9 @@ public class BossBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        MaxHitpoints = 20;
         Hitpoints = MaxHitpoints; // when Boss spawns we will like reset it's health to be maxhealth
         //Healthbar.SetHealth(Hitpoints, MaxHitpoints); // 
-        MaxHitpoints = 5;
     }
 
     /*public void TakeHit(float damage)

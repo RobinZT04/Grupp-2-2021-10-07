@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class barrier : MonoBehaviour
 {
-   public float hp; //En referen för hp som är en float - Elanor 
+   public static float hp; //En referen för hp som är en float - Elanor 
 
     public Animator table; //En animator för table- Elanor 
     public Animator pole; //En animator för pole - Elanor 
