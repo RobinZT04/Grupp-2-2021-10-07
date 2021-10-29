@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
-            Instantiate(ProjectilePrefab, LunchOffset.position, transform.rotation);
+            Instantiate(ProjectilePrefab, LunchOffset.position, Quaternion.identity);
         }
     }
 
