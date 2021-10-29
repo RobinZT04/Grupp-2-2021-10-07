@@ -12,6 +12,7 @@ public class PlayerScript : MonoBehaviour
 
     public bool dead; //variabel bool som kollar om spelaren är död  - Robin
 
+
     public void Start()
     {
         dead = false; //sätter att spelaren inte är död  - Robin
@@ -35,6 +36,14 @@ public class PlayerScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) 
     {
         if(other.transform.tag == "Barrel") //om du collidaer med Barrel  - Robin
+        {
+            restart.SetActive(true); //sätter på restart knappen  - Robin
+            restartdetails.SetActive(true); //sätter på restart sprites  - Robin
+            player.SetBool("Dead", true); //sätter player animationen dead till true  - Robin
+            gun.SetActive(false); //tänger av pistolen  - Robin
+            dead = true; //sätter spelaren till död - Robin
+        }
+        if(other.transform.tag == "bossbullet")
         {
             restart.SetActive(true); //sätter på restart knappen  - Robin
             restartdetails.SetActive(true); //sätter på restart sprites  - Robin
