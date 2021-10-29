@@ -1,11 +1,9 @@
 fileFormatVersion: 2
-guid: 36f6e40c97cbc294bb566fcdc15f766a
+guid: bb707e8030fadc74eb321444a6050ab8
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - flame: {fileID: 109104607342797719, guid: f83ddc0646930204094dd747e81e6506, type: 3}
-  - healthImg: {instanceID: 0}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
