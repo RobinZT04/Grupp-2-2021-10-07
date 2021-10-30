@@ -148,6 +148,7 @@ MonoBehaviour:
   rb: {fileID: 6515155077438789473}
   enemytop: {fileID: 6515155077438789474}
   bloodEffect: {fileID: 9132500817398998268, guid: beab80645b467b14ea2b90ad23ad329a, type: 3}
+  boss: {fileID: 7305365735732794259, guid: c0bf9277d0a18bb439179c076b2efe42, type: 3}
 --- !u!95 &368762124018937496
 Animator:
   serializedVersion: 3

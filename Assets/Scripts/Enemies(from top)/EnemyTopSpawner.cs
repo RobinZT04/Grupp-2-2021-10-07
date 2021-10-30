@@ -13,6 +13,7 @@ public class EnemyTopSpawner : MonoBehaviour
         // Upprepar koden 3 ggr -Henry
         for (int i = 0; i < 3; i++)
         {
+            print("New enemy");
             // Klonar enemytop till ett random ställe i x-axeln -Henry
             Instantiate(enemytop, new Vector3(Random.Range(-8.5f, 8.5f), Random.Range(9, 15), 0), Quaternion.identity);
         }

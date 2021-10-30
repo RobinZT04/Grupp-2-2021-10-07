@@ -11,7 +11,7 @@ public class HealthbarBehaviour : MonoBehaviour
     public Vector3 Offset; // Don't need this for this game
    
     // Start is called before the first frame update
-
+/*
     public void SetHealth(float health, float maxHealth)
     {
         slider.gameObject.SetActive(health < maxHealth); // So what this does is that it will setactive if we damage the boss if we don't it wont show ut the health
@@ -34,4 +34,5 @@ public class HealthbarBehaviour : MonoBehaviour
     {
         slider.transform.position = Camera.main.WorldToScreenPoint(transform.position + Offset); // it basically transform the position from 3d world position to a 2d screen point
     }
+    */
 }

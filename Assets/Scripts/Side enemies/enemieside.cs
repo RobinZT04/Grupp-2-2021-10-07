@@ -21,7 +21,7 @@ public class enemieside : MonoBehaviour
 
     public bool canstart; //En bool som jag har döpt till canstart- Elanor 
 
-    public static bool turnedrat;
+    public static bool turnedrat; //En bool som heter turnedrat som jag kan nå från andra scripts- Elanor
 
     void Start()
     {

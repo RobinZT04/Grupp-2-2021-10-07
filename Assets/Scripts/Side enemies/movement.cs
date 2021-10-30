@@ -20,14 +20,12 @@ public class movement : MonoBehaviour
     {
         body.velocity = new Vector2(speed, 0); //Ger bodyn velocity- Elanor
 
-        if (enemieside.turnedrat)
+        if (enemieside.turnedrat) //Om turnedrat är true? - Elanor 
         {
-            Debug.Log("funkar1");
-            transform.eulerAngles = (new Vector3(0, 180, 0));
-            Debug.Log("funkar");
-        } else
+            transform.eulerAngles = (new Vector3(0, 180, 0)); //Så kommer råttan vända sig om 180 grader alltså så att den är vänd åt andra hållet- Elanor
+        } else //Annars? - Elanor
         {
-            transform.eulerAngles = (new Vector3(0, 0, 0));
+            transform.eulerAngles = (new Vector3(0, 0, 0)); //Så kommer råttan att fortsätta vara åt samma håll, inget ändras- Elanor 
         }
     }
 
