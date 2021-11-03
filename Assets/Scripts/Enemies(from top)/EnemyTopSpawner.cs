@@ -7,6 +7,9 @@ public class EnemyTopSpawner : MonoBehaviour
     // Referens till enemyn -Henry
     public GameObject enemytop;
 
+    public GameObject boss;
+    public bool spawned;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +25,14 @@ public class EnemyTopSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(EnemyTopCounter.EnemyCounter >= 40) 
+        {
+
+            if (!spawned) 
+            {
+                boss.SetActive(true);
+                spawned = true;
+            }
+        }
     }
 }

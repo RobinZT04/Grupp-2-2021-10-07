@@ -9,7 +9,11 @@ public class barrier : MonoBehaviour
     public Animator table; //En animator för table- Elanor 
     public Animator pole; //En animator för pole - Elanor 
     public Animator barrel; //En animator för barrel - Elanor
-    
+
+    public Animator table2; //En animator för table- Elanor 
+    public Animator pole2; //En animator för pole - Elanor 
+    public Animator barrel2; //En animator för barrel - Elanor
+
     public AudioSource broken; //En referrns till min audiosource i unity- Elanor 
     public AudioClip brokenclip; //En referens till själva lkud klippet- Elanor
 
@@ -29,12 +33,20 @@ public class barrier : MonoBehaviour
             table.SetBool("hptwo", true); //Att tables bool "hptwo" i animatorn ska bli true- Elanor 
             pole.SetBool("hptwo", true); //Att polens bool "hptwo" i animatorn ska bli true- Elanor 
             barrel.SetBool("hptwo", true); //Att barrels bool "hptwo" i animatorn ska bli true- Elanor 
+
+            table2.SetBool("hptwo", true); //Att tables bool "hptwo" i animatorn ska bli true- Elanor 
+            pole2.SetBool("hptwo", true); //Att polens bool "hptwo" i animatorn ska bli true- Elanor 
+            barrel2.SetBool("hptwo", true); //Att barrels bool "hptwo" i animatorn ska bli true- Elanor 
         }
         if (hp ==1) //Om Hp är på 1?
         {
             table.SetBool("hpone", true); //Att tables bool "hpone" i animatorn ska bli true- Elanor 
             pole.SetBool("hpone", true); //Att poles bool "hpone" i animatorn ska bli true- Elanor 
             barrel.SetBool("hpone", true); //Att barrels bool "hpone" i animatorn ska bli true- Elanor 
+
+            table2.SetBool("hpone", true); //Att tables bool "hpone" i animatorn ska bli true- Elanor 
+            pole2.SetBool("hpone", true); //Att poles bool "hpone" i animatorn ska bli true- Elanor 
+            barrel2.SetBool("hpone", true); //Att barrels bool "hpone" i animatorn ska bli true- Elanor 
         }
     }
 

@@ -16,11 +16,13 @@ public class EnemyTopMove : MonoBehaviour
     // Referens till blodeffekten; -Henry
     public GameObject bloodEffect;
 
+    //public GameObject boss;
+
     // Start is called before the first frame update
     void Start()
     {
         // Variabeln speed får en random hastighet mellan värderna när spelet startar
-        speed = Random.Range(-1.75f, -4);
+        speed = Random.Range(-1.75f, -2.5f);
 
         // Rör enemyn nedåt -Henry
         rb.velocity = new Vector2(0, Random.Range(-2, -50));
@@ -64,10 +66,12 @@ public class EnemyTopMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(EnemyTopCounter.EnemyCounter);
         // Ger enemyn hastigheten som finns i variabeln "speed" -Henry
         rb.velocity = new Vector2(0, speed);
         if (EnemyTopCounter.EnemyCounter >= 40)
         {
+            //boss.SetActive(true);
             Destroy(gameObject);
         }
     }

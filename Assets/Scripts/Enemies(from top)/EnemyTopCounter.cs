@@ -12,9 +12,4 @@ public class EnemyTopCounter : MonoBehaviour
         EnemyCounter = 0;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
