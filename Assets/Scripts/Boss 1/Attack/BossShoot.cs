@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//Everything here is made by José Luis
 public class BossShoot : MonoBehaviour
 {
 	public GameObject projectile; //reference to the gameobject the enemy will shoot

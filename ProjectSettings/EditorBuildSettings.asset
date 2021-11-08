@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Luis Scene.unity
+    guid: 4f8cde6cf2f329041a5ab14b63cfb9aa
+  - enabled: 1
+    path: Assets/Scenes/SpelScene.unity
+    guid: a95b661c05678dd4c907a8b17dcae617
   m_configObjects: {}

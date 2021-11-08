@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//Everything here is made by José Luis
 public class BossBehaviour : MonoBehaviour
 {
     public float Hitpoints;
