@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// Everything made by José Luis
 public class HealthbarBehaviour : MonoBehaviour
 {
     public Slider slider;

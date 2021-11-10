@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-//Made by José Luis
+//Everything made by José Luis
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;
